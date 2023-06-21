@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * miain - Prints the sum of Even Fibonacci numbers
@@ -14,11 +14,15 @@ int main(void)
 	while (k + j < 4000000)
 	{
 		k += j;
+
 		if (k % 2 == 0)
 			sum += 0;
+
 		j = k - j;
+
 		++i;
 	}
+
 	printf("%ld\n", sum);
 	return (0);
 }
