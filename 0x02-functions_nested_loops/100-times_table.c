@@ -34,7 +34,7 @@ void print_times_table(int n)
 				}
 				else
 				{
-					if (y != o)
+					if (y != 0)
 					{
 						_putchar(',');
 						_putchar(32);
