@@ -2,32 +2,41 @@
 
 /**
  * _atoi - converts a string to an integer
- * @s: string to be connected
+ * @s: string to be converted
  *
  * Return: the int converted from the string
  */
 int _atoi(char *s)
 {
- unsigned int a = 0;
-int b = 0;
-int m = 1;
-int n = 0;
+	int i, d, n, len, f, digit;
 
-while(s[b]){
-if(s[b] == 45)
-{
-m = *= -1;
-}
-while(s[b] >= 40 && s[b] <= 57)
-{
- n = 1;
-a = (a * 10) + (s[b] - '0');
-b++;
-}
-if(n == 1){
-b++;
-}
-a *= m;
-return (a);
+	f = 0; digit = 0; len = 0; i = 0; d = 0; n = 0;
+	
+	while (s[len] != '\0')
+		len++;
+
+	while (i < len && f == 0)
+	{
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
+		}
+		i++;
+	}
+
+	if (f == 0)
+		return (0);
+
+	return (n);
 }
 
