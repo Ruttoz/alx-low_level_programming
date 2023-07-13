@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = 0; i < len - 1; i++)
 	{
-		if (resukt[i])
+		if (result[i])
 			a = 1;
 		if (a)
 			_putchar(result[i] + '0');
